@@ -1,0 +1,58 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/signup",
+  "description": "User will not be created with wrong data",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "name",
+      "description": "User's name"
+    },
+    {
+      "required": true,
+      "name": "email",
+      "description": "User's email"
+    },
+    {
+      "required": true,
+      "name": "password",
+      "description": "User's password"
+    },
+    {
+      "name": "password_confirmation",
+      "description": "Confirm the password"
+    },
+    {
+      "name": "manager",
+      "description": "Assign a manager role to a user"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/signup",
+      "request_body": "{\"name\":\"Regular User\",\"email\":\"regular@example.com\",\"password\":\"password\",\"password_confirmation\":\"wrong_password\",\"manager\":false}",
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 400,
+      "response_status_text": "Bad Request",
+      "response_body": "{\n  \"error\": {\n    \"password_confirmation\": [\n      \"doesn't match Password\",\n      \"doesn't match Password\"\n    ]\n  }\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/api/signup\" -d '{\"name\":\"Regular User\",\"email\":\"regular@example.com\",\"password\":\"password\",\"password_confirmation\":\"wrong_password\",\"manager\":false}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\""
+    }
+  ]
+}

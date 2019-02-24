@@ -1,0 +1,55 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/profile",
+  "description": "Profile will not be updated with bad auth_token",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "name",
+      "description": "User's name"
+    },
+    {
+      "name": "email",
+      "description": "User's email"
+    },
+    {
+      "name": "password",
+      "description": "User's password"
+    },
+    {
+      "name": "password_confirmation",
+      "description": "Confirm the password"
+    },
+    {
+      "name": "manager",
+      "description": "Assign a manager role to a user"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/profile",
+      "request_body": "{\"name\":\"new name\",\"email\":\"newemail@example.com\",\"password\":\"new_password\",\"password_confirmation\":\"new_password\",\"manager\":false}",
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": "{\n  \"error\": \"Not Authorized\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/api/profile\" -d '{\"name\":\"new name\",\"email\":\"newemail@example.com\",\"password\":\"new_password\",\"password_confirmation\":\"new_password\",\"manager\":false}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: bad_auth_token\""
+    }
+  ]
+}

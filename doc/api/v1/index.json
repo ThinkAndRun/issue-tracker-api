@@ -1,0 +1,38 @@
+{
+  "resources": [
+    {
+      "name": "Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Authenticate user",
+          "link": "users/authenticate_user.json",
+          "groups": "v1",
+          "route": "/api/auth",
+          "method": "post"
+        },
+        {
+          "description": "Create user",
+          "link": "users/create_user.json",
+          "groups": "v1",
+          "route": "/api/signup",
+          "method": "post"
+        },
+        {
+          "description": "Show profile",
+          "link": "users/show_profile.json",
+          "groups": "v1",
+          "route": "/api/profile",
+          "method": "get"
+        },
+        {
+          "description": "Update profile",
+          "link": "users/update_profile.json",
+          "groups": "v1",
+          "route": "/api/profile",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

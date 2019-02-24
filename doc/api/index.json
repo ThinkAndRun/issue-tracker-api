@@ -1,0 +1,73 @@
+{
+  "resources": [
+    {
+      "name": "Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Authenticate user",
+          "link": "users/authenticate_user.json",
+          "groups": "v1",
+          "route": "/api/auth",
+          "method": "post"
+        },
+        {
+          "description": "Authentication throws an error with invalid credentials",
+          "link": "users/authentication_throws_an_error_with_invalid_credentials.json",
+          "groups": "private",
+          "route": "/api/auth",
+          "method": "post"
+        },
+        {
+          "description": "Create user",
+          "link": "users/create_user.json",
+          "groups": "v1",
+          "route": "/api/signup",
+          "method": "post"
+        },
+        {
+          "description": "Profile will not be updated with bad auth_token",
+          "link": "users/profile_will_not_be_updated_with_bad_auth_token.json",
+          "groups": "private",
+          "route": "/api/profile",
+          "method": "post"
+        },
+        {
+          "description": "Profile will not be updated with wrong data",
+          "link": "users/profile_will_not_be_updated_with_wrong_data.json",
+          "groups": "private",
+          "route": "/api/profile",
+          "method": "post"
+        },
+        {
+          "description": "Show profile",
+          "link": "users/show_profile.json",
+          "groups": "v1",
+          "route": "/api/profile",
+          "method": "get"
+        },
+        {
+          "description": "Update profile",
+          "link": "users/update_profile.json",
+          "groups": "v1",
+          "route": "/api/profile",
+          "method": "post"
+        },
+        {
+          "description": "User will not be created with wrong data",
+          "link": "users/user_will_not_be_created_with_wrong_data.json",
+          "groups": "private",
+          "route": "/api/signup",
+          "method": "post"
+        },
+        {
+          "description": "Will not be performed without authorization",
+          "link": "users/will_not_be_performed_without_authorization.json",
+          "groups": "private",
+          "route": "/api/profile",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

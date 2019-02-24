@@ -1,0 +1,36 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/profile",
+  "description": "Show profile",
+  "explanation": "Show user's profile information",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/profile",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"name\": \"jude_quigley\",\n  \"email\": \"carmenshanahan@quigleyernser.io\",\n  \"manager\": false\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/api/profile\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExMTYxNDl9.AcbSTLZaE-dVHEZG2frg-5dgmEQbdDy7p-BqSRG4r3U\""
+    }
+  ]
+}

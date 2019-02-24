@@ -10,7 +10,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
+require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -18,6 +18,9 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module IssueTrackerApi
+  API_VERSIONS = [:v1].freeze
+  API_LAST_VERSION = API_VERSIONS.last
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2

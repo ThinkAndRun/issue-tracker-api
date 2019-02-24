@@ -35,10 +35,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'shoulda-matchers'
-  gem 'faker'
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec_api_documentation'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -49,4 +50,11 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'active_model_serializers'
+gem 'apitome'
+gem 'bcrypt', '~> 3.1.12'
+gem 'jwt'
+gem 'rubocop'
+gem 'simple_command'
