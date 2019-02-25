@@ -1,0 +1,35 @@
+{
+  "resource": "Issues",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "/api/issues/:id",
+  "description": "Delete issue",
+  "explanation": "This method deletes user's issue.",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/issues/1",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"localhost:3000/api/issues/1\" -d '' -X DELETE \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\""
+    }
+  ]
+}

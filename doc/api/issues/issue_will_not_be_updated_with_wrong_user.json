@@ -1,0 +1,43 @@
+{
+  "resource": "Issues",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/api/issues/:id",
+  "description": "Issue will not be updated with wrong user",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "title",
+      "description": "Issue's title"
+    },
+    {
+      "name": "description",
+      "description": "Issue's description"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/issues/1",
+      "request_body": "{}",
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": "{\n  \"error\": \"Not Authorized\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/api/issues/1\" -d '{}' -X PUT \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NTExOTc4OTd9.C74cOu-_qTUUsSRgPCjpBHW72V_xiET5ckDY3zf51CM\""
+    }
+  ]
+}

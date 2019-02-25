@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       post  'signup',   to: 'users#create'
       get   'profile',  to: 'users#show'
       post  'profile',  to: 'users#update'
+
+      resources :issues, only: %i[index create show update destroy]
+
+      get  'manage/issues', to: 'manage#issues', as: 'manage_issues'
+      put  'manage/issues/:id', to: 'manage#issue', as: 'manage_issue'
     end
   end
 

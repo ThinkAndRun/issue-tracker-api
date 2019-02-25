@@ -1,0 +1,36 @@
+{
+  "resource": "Issues",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/issues/:id",
+  "description": "Show issue",
+  "explanation": "Show user's issue.",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/issues/1",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"Qui ea unde omnis.\",\n  \"description\": \"Praesentium voluptatem aut. Nostrum reiciendis qui. Inventore adipisci dolor.\",\n  \"created_at\": \"2019-02-25T16:18:17.525Z\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/api/issues/1\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\""
+    }
+  ]
+}

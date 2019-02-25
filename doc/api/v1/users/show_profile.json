@@ -4,7 +4,7 @@
   "http_method": "GET",
   "route": "/api/profile",
   "description": "Show profile",
-  "explanation": "Show user's profile information",
+  "explanation": "Show user's profile information.",
   "parameters": [
 
   ],
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"name\": \"jude_quigley\",\n  \"email\": \"carmenshanahan@quigleyernser.io\",\n  \"manager\": false\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"name\": \"iona.kris\",\n  \"email\": \"shona@kerluke.biz\",\n  \"manager\": false\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"localhost:3000/api/profile\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExMTYxNDl9.AcbSTLZaE-dVHEZG2frg-5dgmEQbdDy7p-BqSRG4r3U\""
+      "curl": "curl -g \"localhost:3000/api/profile\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTh9.wh537zQVwQylyzgFYLZZSpqPhXhb4FB59EvRyUM5cLM\""
     }
   ]
 }

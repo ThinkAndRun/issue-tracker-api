@@ -1,0 +1,43 @@
+{
+  "resource": "Issues",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/api/issues/:id",
+  "description": "Update issue",
+  "explanation": "This method updates user's issue.",
+  "parameters": [
+    {
+      "name": "title",
+      "description": "Issue's title"
+    },
+    {
+      "name": "description",
+      "description": "Issue's description"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/issues/1",
+      "request_body": "{\"title\":\"new title\"}",
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"new title\",\n  \"description\": \"Dolorem sed nostrum. Modi rerum numquam. Et assumenda non.\",\n  \"created_at\": \"2019-02-25T16:18:17.570Z\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/api/issues/1\" -d '{\"title\":\"new title\"}' -X PUT \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\""
+    }
+  ]
+}

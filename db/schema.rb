@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_161029) do
+ActiveRecord::Schema.define(version: 2019_02_24_183046) do
+
+  create_table "issues", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "manager_id"
+    t.string "title"
+    t.text "description"
+    t.string "status", limit: 30, default: "pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "index_issues_on_manager_id"
+    t.index ["user_id"], name: "index_issues_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

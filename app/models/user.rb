@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :issues
   has_secure_password
 
   before_validation :downcase_email
@@ -6,7 +7,7 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
   validates :email, uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: { minimum:6 },
+  validates :password, length: { minimum: 6 },
                        confirmation: true,
                        on: :create
 

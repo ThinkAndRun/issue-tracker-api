@@ -42,7 +42,7 @@ resource 'Users' do
 
     example 'Show profile' do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
-      explanation "Show user's profile information"
+      explanation "Show user's profile information."
       do_request
       expect(status).to eq 200
       resp = JSON.parse(response_body)

@@ -1,0 +1,69 @@
+{
+  "resource": "Manage",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/manage/issues",
+  "description": "Show issues list filtered by status",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "page",
+      "description": "Page number (25 issues in the response)"
+    },
+    {
+      "name": "filter",
+      "description": "Filter for the issue's list { filter: { status: 'pending' } }"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/manage/issues?filter[status]=in_progress",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "filter": {
+          "status": "in_progress"
+        }
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 13,\n    \"status\": \"in_progress\",\n    \"title\": \"Laborum ex consequatur ad.\",\n    \"description\": \"Possimus ut non. At et sint. Hic facilis vero.\",\n    \"created_at\": \"2019-02-25T16:18:17.973Z\",\n    \"user\": {\n      \"id\": 13,\n      \"name\": \"glenn_langosh\",\n      \"email\": \"chana@anderson.name\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 12,\n    \"status\": \"in_progress\",\n    \"title\": \"Vero omnis voluptatem laborum.\",\n    \"description\": \"Minima dolorem molestiae. Atque voluptates enim. Fuga nemo dolor.\",\n    \"created_at\": \"2019-02-25T16:18:17.969Z\",\n    \"user\": {\n      \"id\": 12,\n      \"name\": \"meaghan.okon\",\n      \"email\": \"georgezulauf@bayer.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 11,\n    \"status\": \"in_progress\",\n    \"title\": \"Repellendus pariatur sed delectus.\",\n    \"description\": \"Omnis quod ea. Est ut officiis. Repellendus dicta culpa.\",\n    \"created_at\": \"2019-02-25T16:18:17.965Z\",\n    \"user\": {\n      \"id\": 11,\n      \"name\": \"cleo_purdy\",\n      \"email\": \"esperanza@osinskipagac.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 10,\n    \"status\": \"in_progress\",\n    \"title\": \"Cupiditate optio cumque occaecati.\",\n    \"description\": \"Accusamus ex tempore. Quia dolorem iure. Voluptates quod beatae.\",\n    \"created_at\": \"2019-02-25T16:18:17.962Z\",\n    \"user\": {\n      \"id\": 10,\n      \"name\": \"phylicia\",\n      \"email\": \"chasturcotte@steuber.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 9,\n    \"status\": \"in_progress\",\n    \"title\": \"Corrupti voluptas sit architecto.\",\n    \"description\": \"Praesentium corporis illum. Reprehenderit et et. Quaerat perspiciatis ut.\",\n    \"created_at\": \"2019-02-25T16:18:17.958Z\",\n    \"user\": {\n      \"id\": 9,\n      \"name\": \"carita\",\n      \"email\": \"dennisschmeler@kris.co\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 8,\n    \"status\": \"in_progress\",\n    \"title\": \"Rerum numquam explicabo eum.\",\n    \"description\": \"Qui accusantium beatae. Debitis ea voluptatem. Blanditiis impedit dicta.\",\n    \"created_at\": \"2019-02-25T16:18:17.954Z\",\n    \"user\": {\n      \"id\": 8,\n      \"name\": \"yadira.nolan\",\n      \"email\": \"jeanette@carter.org\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 7,\n    \"status\": \"in_progress\",\n    \"title\": \"Sed nesciunt eveniet excepturi.\",\n    \"description\": \"Ducimus est itaque. Rerum blanditiis sequi. Ullam odio placeat.\",\n    \"created_at\": \"2019-02-25T16:18:17.950Z\",\n    \"user\": {\n      \"id\": 7,\n      \"name\": \"epifania\",\n      \"email\": \"long@handpacocha.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 6,\n    \"status\": \"in_progress\",\n    \"title\": \"Voluptas id quia hic.\",\n    \"description\": \"Amet eos repellendus. Dolores dolore nemo. Ab eos et.\",\n    \"created_at\": \"2019-02-25T16:18:17.946Z\",\n    \"user\": {\n      \"id\": 6,\n      \"name\": \"alejandro.denesik\",\n      \"email\": \"reba@gutmanngreenholt.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 5,\n    \"status\": \"in_progress\",\n    \"title\": \"Et vel eum dolor.\",\n    \"description\": \"Nobis totam nemo. Qui quam aperiam. Et et enim.\",\n    \"created_at\": \"2019-02-25T16:18:17.942Z\",\n    \"user\": {\n      \"id\": 5,\n      \"name\": \"nikki_wyman\",\n      \"email\": \"aldojohns@hartmannfritsch.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 4,\n    \"status\": \"in_progress\",\n    \"title\": \"Qui aut quod cupiditate.\",\n    \"description\": \"Ipsa est sit. Ipsa quos at. Fuga rerum itaque.\",\n    \"created_at\": \"2019-02-25T16:18:17.938Z\",\n    \"user\": {\n      \"id\": 4,\n      \"name\": \"seymour_brekke\",\n      \"email\": \"warren@thiel.biz\",\n      \"manager\": false\n    }\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/api/manage/issues?filter[status]=in_progress\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NTExOTc4OTd9.nVfuE-Yut3K1WXiQdfsL7yRA-V9_B7dSW_zYuFYNn70\""
+    },
+    {
+      "request_method": "GET",
+      "request_path": "/api/manage/issues?filter[status]=",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "filter": {
+          "status": ""
+        }
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 13,\n    \"status\": \"in_progress\",\n    \"title\": \"Laborum ex consequatur ad.\",\n    \"description\": \"Possimus ut non. At et sint. Hic facilis vero.\",\n    \"created_at\": \"2019-02-25T16:18:17.973Z\",\n    \"user\": {\n      \"id\": 13,\n      \"name\": \"glenn_langosh\",\n      \"email\": \"chana@anderson.name\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 12,\n    \"status\": \"in_progress\",\n    \"title\": \"Vero omnis voluptatem laborum.\",\n    \"description\": \"Minima dolorem molestiae. Atque voluptates enim. Fuga nemo dolor.\",\n    \"created_at\": \"2019-02-25T16:18:17.969Z\",\n    \"user\": {\n      \"id\": 12,\n      \"name\": \"meaghan.okon\",\n      \"email\": \"georgezulauf@bayer.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 11,\n    \"status\": \"in_progress\",\n    \"title\": \"Repellendus pariatur sed delectus.\",\n    \"description\": \"Omnis quod ea. Est ut officiis. Repellendus dicta culpa.\",\n    \"created_at\": \"2019-02-25T16:18:17.965Z\",\n    \"user\": {\n      \"id\": 11,\n      \"name\": \"cleo_purdy\",\n      \"email\": \"esperanza@osinskipagac.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 10,\n    \"status\": \"in_progress\",\n    \"title\": \"Cupiditate optio cumque occaecati.\",\n    \"description\": \"Accusamus ex tempore. Quia dolorem iure. Voluptates quod beatae.\",\n    \"created_at\": \"2019-02-25T16:18:17.962Z\",\n    \"user\": {\n      \"id\": 10,\n      \"name\": \"phylicia\",\n      \"email\": \"chasturcotte@steuber.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 9,\n    \"status\": \"in_progress\",\n    \"title\": \"Corrupti voluptas sit architecto.\",\n    \"description\": \"Praesentium corporis illum. Reprehenderit et et. Quaerat perspiciatis ut.\",\n    \"created_at\": \"2019-02-25T16:18:17.958Z\",\n    \"user\": {\n      \"id\": 9,\n      \"name\": \"carita\",\n      \"email\": \"dennisschmeler@kris.co\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 8,\n    \"status\": \"in_progress\",\n    \"title\": \"Rerum numquam explicabo eum.\",\n    \"description\": \"Qui accusantium beatae. Debitis ea voluptatem. Blanditiis impedit dicta.\",\n    \"created_at\": \"2019-02-25T16:18:17.954Z\",\n    \"user\": {\n      \"id\": 8,\n      \"name\": \"yadira.nolan\",\n      \"email\": \"jeanette@carter.org\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 7,\n    \"status\": \"in_progress\",\n    \"title\": \"Sed nesciunt eveniet excepturi.\",\n    \"description\": \"Ducimus est itaque. Rerum blanditiis sequi. Ullam odio placeat.\",\n    \"created_at\": \"2019-02-25T16:18:17.950Z\",\n    \"user\": {\n      \"id\": 7,\n      \"name\": \"epifania\",\n      \"email\": \"long@handpacocha.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 6,\n    \"status\": \"in_progress\",\n    \"title\": \"Voluptas id quia hic.\",\n    \"description\": \"Amet eos repellendus. Dolores dolore nemo. Ab eos et.\",\n    \"created_at\": \"2019-02-25T16:18:17.946Z\",\n    \"user\": {\n      \"id\": 6,\n      \"name\": \"alejandro.denesik\",\n      \"email\": \"reba@gutmanngreenholt.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 5,\n    \"status\": \"in_progress\",\n    \"title\": \"Et vel eum dolor.\",\n    \"description\": \"Nobis totam nemo. Qui quam aperiam. Et et enim.\",\n    \"created_at\": \"2019-02-25T16:18:17.942Z\",\n    \"user\": {\n      \"id\": 5,\n      \"name\": \"nikki_wyman\",\n      \"email\": \"aldojohns@hartmannfritsch.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 4,\n    \"status\": \"in_progress\",\n    \"title\": \"Qui aut quod cupiditate.\",\n    \"description\": \"Ipsa est sit. Ipsa quos at. Fuga rerum itaque.\",\n    \"created_at\": \"2019-02-25T16:18:17.938Z\",\n    \"user\": {\n      \"id\": 4,\n      \"name\": \"seymour_brekke\",\n      \"email\": \"warren@thiel.biz\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 3,\n    \"status\": \"pending\",\n    \"title\": \"Quos dolores quia voluptatum.\",\n    \"description\": \"Debitis fuga id. Quia harum alias. Mollitia fugiat vitae.\",\n    \"created_at\": \"2019-02-25T16:18:17.931Z\",\n    \"user\": {\n      \"id\": 2,\n      \"name\": \"dia.heidenreich\",\n      \"email\": \"julius@funk.org\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 2,\n    \"status\": \"pending\",\n    \"title\": \"Suscipit inventore cum ducimus.\",\n    \"description\": \"Ut corrupti voluptatem. Aliquam iste tempore. Ratione ut suscipit.\",\n    \"created_at\": \"2019-02-25T16:18:17.927Z\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"rodrick_schuppe\",\n      \"email\": \"lamonicakonopelski@wymanhalvorson.org\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 1,\n    \"status\": \"pending\",\n    \"title\": \"Impedit ut et optio.\",\n    \"description\": \"In ratione earum. Voluptatem et qui. Quia voluptatum sunt.\",\n    \"created_at\": \"2019-02-25T16:18:17.926Z\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"rodrick_schuppe\",\n      \"email\": \"lamonicakonopelski@wymanhalvorson.org\",\n      \"manager\": false\n    }\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/api/manage/issues?filter[status]=\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NTExOTc4OTd9.nVfuE-Yut3K1WXiQdfsL7yRA-V9_B7dSW_zYuFYNn70\""
+    }
+  ]
+}

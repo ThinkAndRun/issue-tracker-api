@@ -1,0 +1,44 @@
+{
+  "resource": "Manage",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/manage/issues",
+  "description": "Show issues list with pagination",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "page",
+      "description": "Page number (25 issues in the response)"
+    },
+    {
+      "name": "filter",
+      "description": "Filter for the issue's list { filter: { status: 'pending' } }"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/manage/issues?page=2",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.issue_tracker_api.v1+json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "page": "2"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 8,\n    \"status\": \"pending\",\n    \"title\": \"Odio et aspernatur quia.\",\n    \"description\": \"Ut reiciendis blanditiis. Rerum facere aut. Deserunt nihil voluptates.\",\n    \"created_at\": \"2019-02-25T16:18:17.816Z\",\n    \"user\": {\n      \"id\": 8,\n      \"name\": \"sharie\",\n      \"email\": \"ethyl@johnson.org\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 7,\n    \"status\": \"pending\",\n    \"title\": \"Libero sed eum occaecati.\",\n    \"description\": \"Est provident earum. Iste nesciunt dicta. Neque velit soluta.\",\n    \"created_at\": \"2019-02-25T16:18:17.812Z\",\n    \"user\": {\n      \"id\": 7,\n      \"name\": \"lurline_osinski\",\n      \"email\": \"despina@hoeger.net\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 6,\n    \"status\": \"pending\",\n    \"title\": \"Laudantium ipsum odit ea.\",\n    \"description\": \"Sed id explicabo. Eveniet quos ab. Perspiciatis dolorem inventore.\",\n    \"created_at\": \"2019-02-25T16:18:17.807Z\",\n    \"user\": {\n      \"id\": 6,\n      \"name\": \"cedrick_klein\",\n      \"email\": \"carrollrenner@mertz.name\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 5,\n    \"status\": \"pending\",\n    \"title\": \"Repellendus aut vitae numquam.\",\n    \"description\": \"Et rem officiis. Eos autem qui. Sit quis non.\",\n    \"created_at\": \"2019-02-25T16:18:17.803Z\",\n    \"user\": {\n      \"id\": 5,\n      \"name\": \"jayson_kuphal\",\n      \"email\": \"carriroob@bashirian.info\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 4,\n    \"status\": \"pending\",\n    \"title\": \"Illum recusandae officia aut.\",\n    \"description\": \"Delectus et doloribus. Harum occaecati tenetur. Non fuga blanditiis.\",\n    \"created_at\": \"2019-02-25T16:18:17.799Z\",\n    \"user\": {\n      \"id\": 4,\n      \"name\": \"andre_berge\",\n      \"email\": \"faye@hegmann.biz\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 3,\n    \"status\": \"pending\",\n    \"title\": \"Qui atque eos iure.\",\n    \"description\": \"Quia laboriosam explicabo. Quia sit ratione. Ipsum id illum.\",\n    \"created_at\": \"2019-02-25T16:18:17.778Z\",\n    \"user\": {\n      \"id\": 2,\n      \"name\": \"francesco.hirthe\",\n      \"email\": \"normand@lesch.com\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 2,\n    \"status\": \"pending\",\n    \"title\": \"Sit qui distinctio voluptas.\",\n    \"description\": \"Possimus quo commodi. Reiciendis molestias et. Inventore ab vel.\",\n    \"created_at\": \"2019-02-25T16:18:17.775Z\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"jeremy_becker\",\n      \"email\": \"elviaschaden@haag.co\",\n      \"manager\": false\n    }\n  },\n  {\n    \"id\": 1,\n    \"status\": \"pending\",\n    \"title\": \"Molestias quisquam accusamus quas.\",\n    \"description\": \"Veritatis consequatur reiciendis. Autem accusantium reiciendis. Possimus adipisci aut.\",\n    \"created_at\": \"2019-02-25T16:18:17.774Z\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"jeremy_becker\",\n      \"email\": \"elviaschaden@haag.co\",\n      \"manager\": false\n    }\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/api/manage/issues?page=2\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NTExOTc4OTd9.nVfuE-Yut3K1WXiQdfsL7yRA-V9_B7dSW_zYuFYNn70\""
+    }
+  ]
+}

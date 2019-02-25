@@ -49,7 +49,7 @@
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"localhost:3000/api/profile\" -d '{\"name\":\"new name\",\"email\":\"wrong_email_format\",\"password\":\"new_password\",\"password_confirmation\":\"new_password\",\"manager\":false}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExMTYxNDl9.AcbSTLZaE-dVHEZG2frg-5dgmEQbdDy7p-BqSRG4r3U\""
+      "curl": "curl \"localhost:3000/api/profile\" -d '{\"name\":\"new name\",\"email\":\"wrong_email_format\",\"password\":\"new_password\",\"password_confirmation\":\"new_password\",\"manager\":false}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTh9.wh537zQVwQylyzgFYLZZSpqPhXhb4FB59EvRyUM5cLM\""
     }
   ]
 }

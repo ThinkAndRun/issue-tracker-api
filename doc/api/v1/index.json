@@ -1,6 +1,74 @@
 {
   "resources": [
     {
+      "name": "Issues",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Create issue",
+          "link": "issues/create_issue.json",
+          "groups": "v1",
+          "route": "/api/issues",
+          "method": "post"
+        },
+        {
+          "description": "Delete issue",
+          "link": "issues/delete_issue.json",
+          "groups": "v1",
+          "route": "/api/issues/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Show issue",
+          "link": "issues/show_issue.json",
+          "groups": "v1",
+          "route": "/api/issues/:id",
+          "method": "get"
+        },
+        {
+          "description": "Show issues list",
+          "link": "issues/show_issues_list.json",
+          "groups": "v1",
+          "route": "/api/issues",
+          "method": "get"
+        },
+        {
+          "description": "Update issue",
+          "link": "issues/update_issue.json",
+          "groups": "v1",
+          "route": "/api/issues/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Manage",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Assign issue manager",
+          "link": "manage/assign_issue_manager.json",
+          "groups": "v1",
+          "route": "/api/manage/issues/:id",
+          "method": "put"
+        },
+        {
+          "description": "Assign issue status",
+          "link": "manage/assign_issue_status.json",
+          "groups": "v1",
+          "route": "/api/manage/issues/:id",
+          "method": "put"
+        },
+        {
+          "description": "Show all issues",
+          "link": "manage/show_all_issues.json",
+          "groups": "v1",
+          "route": "/api/manage/issues",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Users",
       "explanation": null,
       "examples": [

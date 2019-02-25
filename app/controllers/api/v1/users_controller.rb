@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     current_user.update_attributes!(user_params)
-    render json: current_user.reload, status: :ok
+    render json: current_user, status: :ok
   rescue ActiveRecord::RecordInvalid => invalid
     render json: { error: invalid.record.errors }, status: :bad_request
   end
@@ -23,12 +23,10 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(
-        :name,
-        :email,
-        :password,
-        :password_confirmation,
-        :manager
-    )
+    params.permit(:name,
+                  :email,
+                  :password,
+                  :password_confirmation,
+                  :manager)
   end
 end
