@@ -5,121 +5,37 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Create issue",
-          "link": "issues/create_issue.json",
+          "description": "Create an issue",
+          "link": "issues/create_an_issue.json",
           "groups": "v1",
           "route": "/api/issues",
           "method": "post"
         },
         {
-          "description": "Delete issue",
-          "link": "issues/delete_issue.json",
+          "description": "Delete an issue",
+          "link": "issues/delete_an_issue.json",
           "groups": "v1",
           "route": "/api/issues/:id",
           "method": "delete"
         },
         {
-          "description": "Issue will not be created with bad auth_token",
-          "link": "issues/issue_will_not_be_created_with_bad_auth_token.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Issue will not be created with bad auth_token",
-          "link": "issues/issue_will_not_be_created_with_bad_auth_token.json",
-          "groups": "private",
-          "route": "/api/issues",
-          "method": "post"
-        },
-        {
-          "description": "Issue will not be created with wrong data",
-          "link": "issues/issue_will_not_be_created_with_wrong_data.json",
-          "groups": "private",
-          "route": "/api/issues",
-          "method": "post"
-        },
-        {
-          "description": "Issue will not be deleted with bad auth_token",
-          "link": "issues/issue_will_not_be_deleted_with_bad_auth_token.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
-          "method": "delete"
-        },
-        {
-          "description": "Issue will not be deleted with wrong user",
-          "link": "issues/issue_will_not_be_deleted_with_wrong_user.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
-          "method": "delete"
-        },
-        {
-          "description": "Issue will not be updated with wrong user",
-          "link": "issues/issue_will_not_be_updated_with_wrong_user.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Show issue",
-          "link": "issues/show_issue.json",
-          "groups": "v1",
-          "route": "/api/issues/:id",
-          "method": "get"
-        },
-        {
-          "description": "Show issues list",
-          "link": "issues/show_issues_list.json",
+          "description": "List of issues",
+          "link": "issues/list_of_issues.json",
           "groups": "v1",
           "route": "/api/issues",
           "method": "get"
         },
         {
-          "description": "Show issues list filtered by status",
-          "link": "issues/show_issues_list_filtered_by_status.json",
-          "groups": "private",
-          "route": "/api/issues",
-          "method": "get"
-        },
-        {
-          "description": "Show issues list with pagination",
-          "link": "issues/show_issues_list_with_pagination.json",
-          "groups": "private",
-          "route": "/api/issues",
-          "method": "get"
-        },
-        {
-          "description": "Update issue",
-          "link": "issues/update_issue.json",
+          "description": "Show an issue",
+          "link": "issues/show_an_issue.json",
           "groups": "v1",
           "route": "/api/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Will not be performed without authorization",
-          "link": "issues/will_not_be_performed_without_authorization.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
           "method": "get"
         },
         {
-          "description": "Will not be performed without authorization",
-          "link": "issues/will_not_be_performed_without_authorization.json",
-          "groups": "private",
-          "route": "/api/issues",
-          "method": "get"
-        },
-        {
-          "description": "Will not update issue's manager as a regular user",
-          "link": "issues/will_not_update_issue's_manager_as_a_regular_user.json",
-          "groups": "private",
-          "route": "/api/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Will not update issue's status as a regular user",
-          "link": "issues/will_not_update_issue's_status_as_a_regular_user.json",
-          "groups": "private",
+          "description": "Update an issue",
+          "link": "issues/update_an_issue.json",
+          "groups": "v1",
           "route": "/api/issues/:id",
           "method": "put"
         }
@@ -130,15 +46,15 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Assign issue manager",
-          "link": "manage/assign_issue_manager.json",
+          "description": "Assign issue's manager",
+          "link": "manage/assign_issue's_manager.json",
           "groups": "v1",
           "route": "/api/manage/issues/:id",
           "method": "put"
         },
         {
-          "description": "Assign issue status",
-          "link": "manage/assign_issue_status.json",
+          "description": "Assign issue's status",
+          "link": "manage/assign_issue's_status.json",
           "groups": "v1",
           "route": "/api/manage/issues/:id",
           "method": "put"
@@ -149,55 +65,6 @@
           "groups": "v1",
           "route": "/api/manage/issues",
           "method": "get"
-        },
-        {
-          "description": "Show issues list filtered by status",
-          "link": "manage/show_issues_list_filtered_by_status.json",
-          "groups": "private",
-          "route": "/api/manage/issues",
-          "method": "get"
-        },
-        {
-          "description": "Show issues list with pagination",
-          "link": "manage/show_issues_list_with_pagination.json",
-          "groups": "private",
-          "route": "/api/manage/issues",
-          "method": "get"
-        },
-        {
-          "description": "Will not be performed without authorization",
-          "link": "manage/will_not_be_performed_without_authorization.json",
-          "groups": "private",
-          "route": "/api/manage/issues",
-          "method": "get"
-        },
-        {
-          "description": "Will not change issue without assigned manager",
-          "link": "manage/will_not_change_issue_without_assigned_manager.json",
-          "groups": "private",
-          "route": "/api/manage/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Will not change issue's manager as a wrong manager",
-          "link": "manage/will_not_change_issue's_manager_as_a_wrong_manager.json",
-          "groups": "private",
-          "route": "/api/manage/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Will not change issue's status as a wrong manager",
-          "link": "manage/will_not_change_issue's_status_as_a_wrong_manager.json",
-          "groups": "private",
-          "route": "/api/manage/issues/:id",
-          "method": "put"
-        },
-        {
-          "description": "Will unassign issue's manager as a manager",
-          "link": "manage/will_unassign_issue's_manager_as_a_manager.json",
-          "groups": "private",
-          "route": "/api/manage/issues/:id",
-          "method": "put"
         }
       ]
     },
@@ -206,16 +73,9 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Authenticate user",
-          "link": "users/authenticate_user.json",
+          "description": "Authenticate a user",
+          "link": "users/authenticate_a_user.json",
           "groups": "v1",
-          "route": "/api/auth",
-          "method": "post"
-        },
-        {
-          "description": "Authentication throws an error with invalid credentials",
-          "link": "users/authentication_throws_an_error_with_invalid_credentials.json",
-          "groups": "private",
           "route": "/api/auth",
           "method": "post"
         },
@@ -224,20 +84,6 @@
           "link": "users/create_user.json",
           "groups": "v1",
           "route": "/api/signup",
-          "method": "post"
-        },
-        {
-          "description": "Profile will not be updated with bad auth_token",
-          "link": "users/profile_will_not_be_updated_with_bad_auth_token.json",
-          "groups": "private",
-          "route": "/api/profile",
-          "method": "post"
-        },
-        {
-          "description": "Profile will not be updated with wrong data",
-          "link": "users/profile_will_not_be_updated_with_wrong_data.json",
-          "groups": "private",
-          "route": "/api/profile",
           "method": "post"
         },
         {
@@ -253,20 +99,6 @@
           "groups": "v1",
           "route": "/api/profile",
           "method": "post"
-        },
-        {
-          "description": "User will not be created with wrong data",
-          "link": "users/user_will_not_be_created_with_wrong_data.json",
-          "groups": "private",
-          "route": "/api/signup",
-          "method": "post"
-        },
-        {
-          "description": "Will not be performed without authorization",
-          "link": "users/will_not_be_performed_without_authorization.json",
-          "groups": "private",
-          "route": "/api/profile",
-          "method": "get"
         }
       ]
     }

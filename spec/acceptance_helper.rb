@@ -16,3 +16,5 @@ RspecApiDocumentation.configure do |config|
     end
   end
 end
+
+Dir[Rails.root.join("spec/acceptance/api/**/shared_examples.rb")].each {|f| require f}

@@ -3,8 +3,8 @@
   "resource_explanation": null,
   "http_method": "POST",
   "route": "/api/auth",
-  "description": "Authentication throws an error with invalid credentials",
-  "explanation": null,
+  "description": "Authenticate a user",
+  "explanation": "This method authenticates a user and returns an `auth_token`.You can authorize your API calls with it.",
   "parameters": [
     {
       "required": true,
@@ -24,7 +24,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/auth",
-      "request_body": "{\"email\":\"regular@example.com\",\"password\":\"wrong_password\"}",
+      "request_body": "{\"email\":\"regular@example.com\",\"password\":\"password\"}",
       "request_headers": {
         "Accept": "application/vnd.issue_tracker_api.v1+json",
         "Content-Type": "application/json"
@@ -32,14 +32,14 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 401,
-      "response_status_text": "Unauthorized",
-      "response_body": "{\n  \"error\": {\n    \"user_authentication\": [\n      \"invalid credentials\"\n    ]\n  }\n}",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTEyOTY2NTB9.xuxZhrLnBOhq1XqTm3IHQxi95fb-NkKO7g3VGU8YF1Y\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"localhost:3000/api/auth\" -d '{\"email\":\"regular@example.com\",\"password\":\"wrong_password\"}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\""
+      "curl": "curl \"localhost:3000/api/auth\" -d '{\"email\":\"regular@example.com\",\"password\":\"password\"}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\""
     }
   ]
 }

@@ -55,6 +55,7 @@ end
 gem 'active_model_serializers'
 gem 'apitome'
 gem 'bcrypt', '~> 3.1.12'
+gem 'cancancan'
 gem 'jwt'
 gem 'rubocop'
 gem 'simple_command'

@@ -3,7 +3,7 @@
   "resource_explanation": null,
   "http_method": "GET",
   "route": "/api/issues/:id",
-  "description": "Show issue",
+  "description": "Show an issue",
   "explanation": "Show user's issue.",
   "parameters": [
 
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"Qui ea unde omnis.\",\n  \"description\": \"Praesentium voluptatem aut. Nostrum reiciendis qui. Inventore adipisci dolor.\",\n  \"created_at\": \"2019-02-25T16:18:17.525Z\"\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"Animi et voluptatem recusandae.\",\n  \"description\": \"Exercitationem autem modi. Minus adipisci fugiat. Enim optio libero.\",\n  \"created_at\": \"2019-02-26T19:44:11.288Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"localhost:3000/api/issues/1\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\""
+      "curl": "curl -g \"localhost:3000/api/issues/1\" -X GET \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTEyOTY2NTF9.KxwCS4K6J34YdfnWABbvmZCh6sTymUjevWdPDkAOJhY\""
     }
   ]
 }

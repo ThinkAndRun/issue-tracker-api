@@ -29,7 +29,7 @@ resource 'Users' do
       expect(resp['auth_token']).to be_present
     end
 
-    example 'User will not be created with wrong data', document: :private do
+    example 'Deny user creation with wrong data', document: false do
       do_request(password_confirmation: 'wrong_password')
       expect(status).to eq 400
       resp = JSON.parse(response_body)
@@ -49,13 +49,7 @@ resource 'Users' do
       expect(resp['email']).to be_present
     end
 
-    example 'Will not be performed without authorization', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Deny unauthenticated access'
   end
 
   post '/api/profile', document: :v1 do
@@ -80,7 +74,7 @@ resource 'Users' do
       expect(status).to eq 200
     end
 
-    example 'Profile will not be updated with wrong data', document: :private do
+    example 'Deny profile update with wrong data', document: false do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
       do_request(email: 'wrong_email_format')
       expect(status).to eq 400
@@ -88,12 +82,6 @@ resource 'Users' do
       expect(resp['error'].to_s).to match(/is invalid/)
     end
 
-    example 'Profile will not be updated with bad auth_token', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Deny unauthenticated access'
   end
 end

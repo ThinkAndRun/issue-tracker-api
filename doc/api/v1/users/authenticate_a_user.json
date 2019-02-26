@@ -3,7 +3,7 @@
   "resource_explanation": null,
   "http_method": "POST",
   "route": "/api/auth",
-  "description": "Authenticate user",
+  "description": "Authenticate a user",
   "explanation": "This method authenticates a user and returns an `auth_token`.You can authorize your API calls with it.",
   "parameters": [
     {
@@ -34,7 +34,7 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\"\n}",
+      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTEyOTY2NTB9.xuxZhrLnBOhq1XqTm3IHQxi95fb-NkKO7g3VGU8YF1Y\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

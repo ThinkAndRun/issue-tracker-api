@@ -6,34 +6,42 @@ resource 'Issues' do
 
   get '/api/issues', document: :v1 do
     parameter :page, 'Page number (25 issues in the response)'
-    parameter :filter, "Filter for the issue's list { filter: { status: 'pending' } }"
+    parameter :filter, "Filter for the issue's, example: { filter: { status: 'pending' } }"
+
+    per_page = 25
+    u_issues_count = 2
+    ou_issues_count = 30
 
     let!(:user) { create(:user) }
-    let!(:issues) { create_list(:issue, 2, user: user) }
+    let!(:issues) { create_list(:issue, u_issues_count,
+                                        user: user) }
     let!(:other_user) { create(:user) }
-    let!(:other_users_issues) { create_list(:issue, 30, user: other_user) }
+    let!(:other_users_issues) { create_list(:issue, ou_issues_count,
+                                                    user: other_user) }
     let!(:manager) { create(:user, :manager) }
 
-    example 'Show issues list' do
+    example 'List of issues' do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
-      explanation "Show user's issues list."
+      explanation "Show user's issues."
       do_request
       expect(status).to eq 200
       resp = JSON.parse(response_body)
-      expect(resp.count).to eq(2)
+      expect(resp.count).to eq(u_issues_count)
     end
 
-    example 'Show issues list with pagination', document: :private do
+    example 'List of issues with pagination (25 issues in the response)', document: false do
       header 'Authorization', JsonWebToken.encode(user_id: other_user.id)
       do_request(page: 2)
       expect(status).to eq 200
       resp = JSON.parse(response_body)
-      expect(resp.count).to eq(30-25)
+      expect(resp.count).to eq(ou_issues_count - per_page)
     end
 
-    example 'Show issues list filtered by status', document: :private do
+    example 'List of issues filtered by status', document: false do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
-      create_list(:issue, 10, user: user, status: 'in_progress')
+      create_list(:issue, 10, user: user,
+                              status: 'in_progress',
+                              manager: create(:user, :manager))
 
       do_request(filter: { status: 'in_progress' })
       expect(status).to eq 200
@@ -43,23 +51,17 @@ resource 'Issues' do
       do_request(filter: { status: '' })
       expect(status).to eq 200
       resp = JSON.parse(response_body)
-      expect(resp.count).to eq(12)
+      expect(resp.count).to eq(10 + u_issues_count)
     end
 
-    example 'Will not be performed without authorization', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Deny unauthenticated access'
   end
 
   get '/api/issues/:id', document: :v1 do
     let!(:issue) { create(:issue) }
     let!(:id) { issue.id }
 
-    example 'Show issue' do
+    example 'Show an issue' do
       header 'Authorization', JsonWebToken.encode(user_id: issue.user.id)
       explanation "Show user's issue."
       do_request
@@ -68,13 +70,8 @@ resource 'Issues' do
       expect(resp['id']).to eq(issue.id)
     end
 
-    example 'Will not be performed without authorization', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Issue not found or action forbidden', 'show'
+    include_examples 'Deny unauthenticated access'
   end
 
   post '/api/issues', document: :v1 do
@@ -83,15 +80,15 @@ resource 'Issues' do
     let!(:user) { create(:user) }
     let(:raw_post) { params.to_json }
 
-    example 'Create issue' do
+    example 'Create an issue' do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
-      explanation 'This method creates issue for a current user.'
+      explanation 'This method creates an issue for the current user.'
       do_request(title: Faker::Lorem.sentence)
       expect(status).to eq 201
       expect(user.issues.count).to eq 1
     end
 
-    example 'Issue will not be created with wrong data', document: :private do
+    example 'Deny issue creation with wrong data', document: false do
       header 'Authorization', JsonWebToken.encode(user_id: user.id)
       do_request
       expect(status).to eq 400
@@ -99,25 +96,19 @@ resource 'Issues' do
       expect(resp['error'].to_s).to match(/can't be blank/)
     end
 
-    example 'Issue will not be created with bad auth_token', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Deny unauthenticated access'
   end
 
   put '/api/issues/:id', document: :v1 do
     parameter :title, "Issue's title"
     parameter :description, "Issue's description"
+
     let!(:issue) { create(:issue) }
-    let(:wrong_user) { create(:user) }
     let(:id) { issue.id }
     let(:manager) { create(:user, :manager) }
     let(:raw_post) { params.to_json }
 
-    example 'Update issue' do
+    example 'Update an issue' do
       header 'Authorization', JsonWebToken.encode(user_id: issue.user.id)
       explanation "This method updates user's issue."
       do_request(title: 'new title')
@@ -126,66 +117,39 @@ resource 'Issues' do
       expect(resp['title'].to_s).to eq('new title')
     end
 
-    example 'Issue will not be updated with wrong user', document: :private do
-      header 'Authorization', JsonWebToken.encode(user_id: wrong_user.id)
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
-
-    example 'Issue will not be created with bad auth_token', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
-
-    example "Will not update issue's status as a regular user", document: :private do
+    example "Regular user can't update issue's status", document: false do
       header 'Authorization', JsonWebToken.encode(user_id: issue.user.id)
       do_request(status: 'in_progress')
-      expect(status).to eq 200
+      expect(status).to eq 403
       resp = JSON.parse(response_body)
-      expect(resp['status']).to eq('pending')
+      expect(resp['error']).to eq('Forbidden')
     end
 
-    example "Will not update issue's manager as a regular user", document: :private do
+    example "Regular user can't update issue's manager", document: false do
       header 'Authorization', JsonWebToken.encode(user_id: issue.user.id)
-      do_request(manager: true)
-      expect(status).to eq 200
+      do_request(manager_id: manager.id)
+      expect(status).to eq 403
       resp = JSON.parse(response_body)
-      expect(resp['manager']).to eq(nil)
+      expect(resp['error']).to eq('Forbidden')
     end
+
+    include_examples 'Issue not found or action forbidden', 'update'
+    include_examples 'Deny unauthenticated access'
   end
 
   delete '/api/issues/:id', document: :v1 do
     let!(:issue) { create(:issue) }
-    let(:wrong_user) { create(:user) }
     let(:id) { issue.id }
 
-    example 'Delete issue' do
+    example 'Delete an issue' do
       header 'Authorization', JsonWebToken.encode(user_id: issue.user.id)
       explanation "This method deletes user's issue."
       do_request
       expect(status).to eq 204
     end
 
-    example 'Issue will not be deleted with wrong user', document: :private do
-      header 'Authorization', JsonWebToken.encode(user_id: wrong_user.id)
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
-
-    example 'Issue will not be deleted with bad auth_token', document: :private do
-      header 'Authorization', 'bad_auth_token'
-      do_request
-      expect(status).to eq 401
-      resp = JSON.parse(response_body)
-      expect(resp['error'].to_s).to match(/Not Authorized/)
-    end
+    include_examples 'Issue not found or action forbidden', 'delete'
+    include_examples 'Deny unauthenticated access'
   end
 end
 

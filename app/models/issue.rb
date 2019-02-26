@@ -10,22 +10,18 @@ class Issue < ApplicationRecord
 
   validates :status, inclusion: { in: STATUSES }
   validates :status, :title, presence: true
+  validate  :assignee_required
 
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order(id: :desc) }
   scope :status, -> (status) { where status: status if status.present? }
 
-  def update_manager!(new_manager_id, current_user_id)
-    return unless User.find(current_user_id).manager?
-    return if manager_id.present? && manager_id != current_user_id
-    return if manager_id.blank? && new_manager_id != current_user_id
-    return if ASSIGNEE_REQUIRED.include? status && new_manager_id.blank?
-    update!(manager_id: new_manager_id)
-  end
+  private
 
-  def update_status!(new_status, current_user_id)
-    return unless User.find(current_user_id).manager?
-    return if ASSIGNEE_REQUIRED.include? new_status && manager_id.blank?
-    return if manager_id != current_user_id
-    update!(status: new_status)
+  def assignee_required
+    if manager_id.blank? && (manager_id_changed? || status_changed?) &&
+        ASSIGNEE_REQUIRED.include?(status)
+      errors.add(:manager_id, "must be assigned when status is '#{status}'")
+      return false
+    end
   end
 end

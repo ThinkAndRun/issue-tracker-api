@@ -3,8 +3,8 @@
   "resource_explanation": null,
   "http_method": "POST",
   "route": "/api/issues",
-  "description": "Create issue",
-  "explanation": "This method creates issue for a current user.",
+  "description": "Create an issue",
+  "explanation": "This method creates an issue for the current user.",
   "parameters": [
     {
       "required": true,
@@ -23,7 +23,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/issues",
-      "request_body": "{\"title\":\"Tempora quis dolor assumenda.\"}",
+      "request_body": "{\"title\":\"Voluptate molestias eos culpa.\"}",
       "request_headers": {
         "Accept": "application/vnd.issue_tracker_api.v1+json",
         "Content-Type": "application/json"
@@ -33,12 +33,12 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"Tempora quis dolor assumenda.\",\n  \"description\": null,\n  \"created_at\": \"2019-02-25T16:18:17.546Z\"\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"status\": \"pending\",\n  \"title\": \"Voluptate molestias eos culpa.\",\n  \"description\": null,\n  \"created_at\": \"2019-02-26T19:44:11.354Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"localhost:3000/api/issues\" -d '{\"title\":\"Tempora quis dolor assumenda.\"}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTExOTc4OTd9.BWxF2J5JnWs52H6io6oYaR0TyWTYw8n7KbO9Yix6JyU\""
+      "curl": "curl \"localhost:3000/api/issues\" -d '{\"title\":\"Voluptate molestias eos culpa.\"}' -X POST \\\n\t-H \"Accept: application/vnd.issue_tracker_api.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NTEyOTY2NTF9.KxwCS4K6J34YdfnWABbvmZCh6sTymUjevWdPDkAOJhY\""
     }
   ]
 }

@@ -5,36 +5,36 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Create issue",
-          "link": "issues/create_issue.json",
+          "description": "Create an issue",
+          "link": "issues/create_an_issue.json",
           "groups": "v1",
           "route": "/api/issues",
           "method": "post"
         },
         {
-          "description": "Delete issue",
-          "link": "issues/delete_issue.json",
+          "description": "Delete an issue",
+          "link": "issues/delete_an_issue.json",
           "groups": "v1",
           "route": "/api/issues/:id",
           "method": "delete"
         },
         {
-          "description": "Show issue",
-          "link": "issues/show_issue.json",
-          "groups": "v1",
-          "route": "/api/issues/:id",
-          "method": "get"
-        },
-        {
-          "description": "Show issues list",
-          "link": "issues/show_issues_list.json",
+          "description": "List of issues",
+          "link": "issues/list_of_issues.json",
           "groups": "v1",
           "route": "/api/issues",
           "method": "get"
         },
         {
-          "description": "Update issue",
-          "link": "issues/update_issue.json",
+          "description": "Show an issue",
+          "link": "issues/show_an_issue.json",
+          "groups": "v1",
+          "route": "/api/issues/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update an issue",
+          "link": "issues/update_an_issue.json",
           "groups": "v1",
           "route": "/api/issues/:id",
           "method": "put"
@@ -46,15 +46,15 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Assign issue manager",
-          "link": "manage/assign_issue_manager.json",
+          "description": "Assign issue's manager",
+          "link": "manage/assign_issue's_manager.json",
           "groups": "v1",
           "route": "/api/manage/issues/:id",
           "method": "put"
         },
         {
-          "description": "Assign issue status",
-          "link": "manage/assign_issue_status.json",
+          "description": "Assign issue's status",
+          "link": "manage/assign_issue's_status.json",
           "groups": "v1",
           "route": "/api/manage/issues/:id",
           "method": "put"
@@ -73,8 +73,8 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Authenticate user",
-          "link": "users/authenticate_user.json",
+          "description": "Authenticate a user",
+          "link": "users/authenticate_a_user.json",
           "groups": "v1",
           "route": "/api/auth",
           "method": "post"

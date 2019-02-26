@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_request
   attr_reader :current_user
+
   around_action :handle_exceptions, if: proc { request.path.include?('/api') }
 
   def handle_exceptions
@@ -23,6 +24,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_request
     @current_user = AuthorizeApiRequest.call(request.headers).result
+    # Not authenticated
     render json: { error: 'Not Authorized' }, status: 401 unless @current_user
   end
 end

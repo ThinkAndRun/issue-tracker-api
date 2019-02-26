@@ -1,5 +1,6 @@
 class Api::V1::IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :update, :destroy]
+  before_action :check_unpermitted_parameters, only: [:create, :update]
 
   # GET /api/issues
   def index
@@ -7,7 +8,6 @@ class Api::V1::IssuesController < ApplicationController
                           .paginate(page: params[:page], per_page: 25)
     render json: @issues, status: :ok
   end
-
 
   # POST /api/issues
   def create
@@ -45,6 +45,15 @@ class Api::V1::IssuesController < ApplicationController
   def set_issue
     @issue = current_user.issues.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    render json: { error: 'Not Authorized' }, status: :unauthorized
+    if Issue.where(id: params[:id]).exists?
+      render json: { error: 'Forbidden' }, status: :forbidden
+    else
+      render json: { error: 'Not found' }, status: :not_found
+    end
+  end
+
+  def check_unpermitted_parameters
+    render json: { error: 'Forbidden' }, status: :forbidden if
+      params[:status] || params[:manager_id]
   end
 end

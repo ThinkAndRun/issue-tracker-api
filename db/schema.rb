@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2019_02_24_183046) do
 
   create_table "issues", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.integer "manager_id"
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
     t.string "status", limit: 30, default: "pending"
     t.datetime "created_at", null: false
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2019_02_24_183046) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.boolean "manager", default: false
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.boolean "manager", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
